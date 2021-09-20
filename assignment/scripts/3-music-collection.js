@@ -30,6 +30,25 @@ const showCollection = (arr) => {
   for (el of arr) {
     console.log(el);
   }
-};
+};//end showCollection
 
 showCollection(collection);
+
+const findByArtist = (artist) => {
+  console.log('in findByArtist');
+  mutualArtist = [];
+  for (let i = 0; i<collection.length; i++){
+    let search = collection[i].artist;
+    if (artist===search){
+      mutualArtist.push(search);
+    }//end if true
+  }//end for loop
+  if (mutualArtist.length===0){
+    console.log('Artist not found');
+  }//end if no match found
+  console.log(mutualArtist);
+}//end findByArtist
+
+console.log(findByArtist('Empire of the Sun'));
+console.log('(expect not found) ' + findByArtist('Childish Gambino'));
+console.log(findByArtist('Kid Cudi')); 
